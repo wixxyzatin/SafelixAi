@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SafeLix AI Dashboard</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Segoe UI;
+background:#020617;
+color:white;
+overflow-x:hidden;
+}
+
+/* background glow */
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 30%, #38bdf8 0%, transparent 25%),
+radial-gradient(circle at 80% 70%, #0ea5e9 0%, transparent 25%);
+opacity:0.15;
+z-index:-1;
+}
+
+/* hero */
+.hero{
+text-align:center;
+padding:80px 20px;
+animation:fadeIn 1.2s ease;
+}
+
+.hero h1{
+font-size:48px;
+background:linear-gradient(90deg,#38bdf8,#0ea5e9);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+color:#cbd5f5;
+margin-top:10px;
+font-size:16px;
+}
+
+/* grid */
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+max-width:1000px;
+margin:40px auto;
+padding:0 20px;
+}
+
+/* cards */
+.card{
+background:#0b1220;
+padding:30px;
+border-radius:16px;
+text-align:center;
+box-shadow:0 0 25px rgba(0,0,0,0.6);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.04);
+box-shadow:0 0 35px #38bdf8;
+}
+
+.btn{
+display:block;
+background:linear-gradient(90deg,#38bdf8,#0ea5e9);
+padding:12px;
+margin-top:15px;
+border-radius:8px;
+color:black;
+font-weight:bold;
+text-decoration:none;
+}
+
+/* footer */
+.footer{
+text-align:center;
+margin-top:60px;
+padding:20px;
+color:#94a3b8;
+font-size:13px;
+}
+
+/* animation */
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(-30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+<h1>SafeLix AI</h1>
+<p>Validate • Build • Scale Your Startup</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Analyze Startup</h3>
+<a class="btn" href="/analyzer">Open</a>
+</div>
+
+<div class="card">
+<h3>Generate Idea</h3>
+<a class="btn" href="/generate">Open</a>
+</div>
+
+<div class="card">
+<h3>Pitch Builder</h3>
+<a class="btn" href="/pitch">Open</a>
+</div>
+
+<div class="card">
+<h3>Investor Score</h3>
+<a class="btn" href="/investor">Check</a>
+</div>
+
+<div class="card">
+<h3>View Analyses</h3>
+<a class="btn" href="/view">Open</a>
+</div>
+
+<div class="card">
+<h3>About SafeLix</h3>
+<a class="btn" href="/about">Open</a>
+</div>
+
+<div class="card">
+<h3>Admin Panel</h3>
+<a class="btn" href="/admin">Open</a>
+</div>
+
+<div class="card">
+<h3>Logout</h3>
+<a class="btn" href="/logout">Exit</a>
+</div>
+
+</div>
+
+<div class="footer">
+Powered by SafeLix AI Engine • Developed by Jatin Yadav • © SafeLix AI
+</div>
+
+</body>
+</html>

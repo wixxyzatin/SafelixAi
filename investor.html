@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Investor Score</title>
+
+<style>
+body{
+margin:0;
+font-family:Segoe UI;
+background:#020617;
+color:white;
+}
+
+.container{
+max-width:800px;
+margin:60px auto;
+padding:30px;
+}
+
+h1{
+color:#38bdf8;
+text-align:center;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:none;
+}
+
+button{
+padding:14px;
+background:linear-gradient(90deg,#38bdf8,#0ea5e9);
+border:none;
+border-radius:8px;
+color:black;
+font-weight:bold;
+width:100%;
+cursor:pointer;
+}
+
+.result{
+margin-top:30px;
+background:#0b1220;
+padding:25px;
+border-radius:12px;
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Investor Readiness Score</h1>
+
+<form method="POST">
+
+<input name="market" placeholder="Market demand level" required>
+<input name="revenue" placeholder="Revenue potential" required>
+<input name="scalability" placeholder="Scalability" required>
+<input name="innovation" placeholder="Innovation level" required>
+
+<button type="submit">Calculate Score</button>
+
+</form>
+
+{% if score %}
+<div class="result">
+<h2>Investor Score: {{score}}/100</h2>
+<p>{{status}}</p>
+</div>
+{% endif %}
+
+</div>
+
+</body>
+</html>

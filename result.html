@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SafeLix AI Result</title>
+
+<style>
+body{
+margin:0;
+font-family:Segoe UI;
+background:#020617;
+color:white;
+}
+
+.container{
+max-width:800px;
+margin:80px auto;
+padding:40px;
+background:#0b1220;
+border-radius:16px;
+box-shadow:0 0 30px rgba(0,0,0,0.6);
+}
+
+h2{
+color:#38bdf8;
+text-align:center;
+margin-bottom:20px;
+}
+
+#ai-text{
+line-height:1.6;
+margin-top:20px;
+white-space:pre-wrap;
+}
+
+button{
+margin-top:20px;
+padding:12px 18px;
+background:linear-gradient(90deg,#38bdf8,#0ea5e9);
+border:none;
+border-radius:8px;
+color:black;
+font-weight:bold;
+cursor:pointer;
+margin-right:10px;
+}
+
+.actions{
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>AI Generated Startup Idea</h2>
+
+<p id="ai-text"></p>
+
+<div class="actions">
+
+<button onclick="copyText()">Copy Idea</button>
+
+<form action="/save_generated_idea" method="POST" style="display:inline;">
+    <input type="hidden" name="idea" value="{{ idea }}">
+    <button type="submit">Save Idea</button>
+</form>
+
+<a href="/generate">
+<button>Generate Again</button>
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+let text = `{{ idea }}`;
+let i = 0;
+
+function typeEffect() {
+    if (i < text.length) {
+        document.getElementById("ai-text").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 15);
+    }
+}
+
+typeEffect();
+
+function copyText() {
+    navigator.clipboard.writeText(`{{ idea }}`);
+    alert("Idea copied!");
+}
+
+</script>
+
+</body>
+</html>
